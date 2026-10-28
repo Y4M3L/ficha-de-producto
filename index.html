@@ -1,0 +1,877 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#f9efcf">
+<meta name="description" content="Descubre Honey Farm Bila, miel cruda natural para desayunos, infusiones y recetas.">
+<title>Honey Farm Bila | Miel cruda natural</title>
+
+<style>
+:root {
+  --honey: #efb72e;
+  --honey-light: #f9efcf;
+  --coffee: #3e2a19;
+  --ink: #352313;
+  --muted: #6d5b46;
+  --paper: #fffdf7;
+  --line: #eadfc7;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 82px;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  color: var(--ink);
+  background: var(--paper);
+  line-height: 1.55;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.top {
+  background: var(--coffee);
+  color: #fff7df;
+  text-align: center;
+  padding: 9px 12px;
+  font-size: 12px;
+  letter-spacing: .5px;
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 16px 5%;
+  border-bottom: 1px solid #eee3cc;
+  background: var(--paper);
+  position: sticky;
+  top: 0;
+  z-index: 5;
+}
+
+.brand {
+  font-weight: 900;
+  font-size: 19px;
+  letter-spacing: -.7px;
+  line-height: 1.05;
+}
+
+.brand span {
+  display: block;
+  color: #aa741b;
+  font-size: 10px;
+  letter-spacing: 3px;
+  margin-top: 5px;
+}
+
+.links {
+  display: flex;
+  gap: 17px;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.pill {
+  display: inline-block;
+  background: var(--honey);
+  color: var(--ink);
+  border: 0;
+  border-radius: 30px;
+  padding: 12px 19px;
+  font-weight: 800;
+  font-size: 12px;
+}
+
+.secondary {
+  display: inline-block;
+  border: 1px solid #9d7c49;
+  background: transparent;
+  color: #49341d;
+  border-radius: 30px;
+  padding: 11px 16px;
+  font-weight: 700;
+  font-size: 12px;
+}
+
+.hero {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 24px;
+  padding: 48px 7%;
+  background: var(--honey-light);
+}
+
+.eyebrow {
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #8d621b;
+}
+
+h1 {
+  font-size: clamp(33px, 5vw, 57px);
+  line-height: 1.03;
+  letter-spacing: -2px;
+  margin: 16px 0;
+}
+
+h1 em {
+  color: #a66d13;
+  font-style: normal;
+}
+
+p {
+  font-size: 14px;
+  color: var(--muted);
+}
+
+.actions {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin: 23px 0;
+}
+
+.micro {
+  font-size: 11px;
+  color: #77644b;
+}
+
+/* Ilustración conceptual del tarro */
+
+.visual {
+  min-height: 290px;
+  border-radius: 48% 48% 22px 22px;
+  background: #f3d780;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.sun {
+  position: absolute;
+  width: 235px;
+  height: 235px;
+  border-radius: 50%;
+  background: #ffedb1;
+  top: 25px;
+}
+
+.jar {
+  position: relative;
+  width: 135px;
+  height: 174px;
+  background: linear-gradient(
+    90deg,
+    #9a5916,
+    #e7a629 35%,
+    #f8d66e 65%,
+    #b77418
+  );
+  border: 3px solid #8c541a;
+  border-radius: 17px 17px 25px 25px;
+  box-shadow: 10px 14px 25px #8b591b40;
+  z-index: 1;
+  margin-top: 39px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.lid {
+  position: absolute;
+  top: -19px;
+  left: -5px;
+  width: 139px;
+  height: 27px;
+  border-radius: 6px;
+  background: repeating-linear-gradient(
+    90deg,
+    #4c2c16 0 5px,
+    #694321 5px 8px
+  );
+  border: 2px solid #3e2815;
+}
+
+.label {
+  background: #fff6dc;
+  border: 1px solid #d9b65c;
+  width: 108px;
+  min-height: 91px;
+  text-align: center;
+  padding: 13px 4px;
+  color: #543616;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  line-height: 1.2;
+}
+
+.label b {
+  font-size: 14px;
+}
+
+.label small {
+  font-size: 8px;
+  letter-spacing: 2px;
+  margin-top: 7px;
+}
+
+.leaf {
+  position: absolute;
+  font-size: 38px;
+  z-index: 2;
+}
+
+.leaf.a {
+  left: 15%;
+  bottom: 45px;
+  transform: rotate(-25deg);
+}
+
+.leaf.b {
+  right: 12%;
+  top: 40px;
+  transform: rotate(30deg);
+}
+
+.note {
+  position: absolute;
+  bottom: 17px;
+  background: #fff9e9d9;
+  padding: 8px 12px;
+  border-radius: 20px;
+  font-size: 10px;
+  font-weight: 700;
+  z-index: 3;
+}
+
+/* Características destacadas */
+
+.trust {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  padding: 20px 6%;
+  background: #fff;
+}
+
+.trust div {
+  text-align: center;
+  font-size: 11px;
+  font-weight: 700;
+  padding: 8px 3px;
+}
+
+.trust strong {
+  display: block;
+  font-size: 20px;
+  margin-bottom: 4px;
+}
+
+section.content {
+  padding: 47px 7%;
+}
+
+.center {
+  text-align: center;
+  max-width: 650px;
+  margin: 0 auto 25px;
+}
+
+h2 {
+  font-size: clamp(25px, 3.5vw, 37px);
+  line-height: 1.12;
+  letter-spacing: -1px;
+  margin: 10px 0;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+}
+
+.feature {
+  background: #f8f0dc;
+  padding: 22px;
+  border-radius: 14px;
+}
+
+.ico {
+  font-size: 27px;
+}
+
+.feature h3 {
+  font-size: 15px;
+  margin: 12px 0 5px;
+}
+
+.feature p {
+  font-size: 12px;
+  margin-bottom: 0;
+}
+
+/* Sección de producto */
+
+.split {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+  align-items: center;
+  background: #f2e5c3;
+}
+
+.split .art {
+  min-height: 230px;
+  border-radius: 14px;
+  background: #e7c56a;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 70px;
+}
+
+.check {
+  padding-left: 0;
+  list-style: none;
+  font-size: 13px;
+}
+
+.check li {
+  margin: 10px 0;
+}
+
+.check li::before {
+  content: "✓";
+  font-weight: bold;
+  color: #987019;
+  margin-right: 10px;
+}
+
+/* Ficha técnica */
+
+.spec {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13px;
+}
+
+.spec td {
+  padding: 12px 8px;
+  border-bottom: 1px solid var(--line);
+}
+
+.spec td:first-child {
+  font-weight: 700;
+  width: 40%;
+}
+
+.pending {
+  font-size: 10px;
+  color: #78644b;
+  margin-top: 15px;
+}
+
+/* Preguntas frecuentes */
+
+.faq {
+  max-width: 760px;
+  margin: auto;
+}
+
+details {
+  border-bottom: 1px solid #e6d9bd;
+  padding: 15px 0;
+}
+
+summary {
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+details p {
+  font-size: 13px;
+}
+
+/* Conversión y contacto */
+
+.cta {
+  background: var(--coffee);
+  color: #fff4d6;
+  text-align: center;
+  padding: 44px 7%;
+}
+
+.cta p {
+  color: #e8d9bc;
+}
+
+.cta h2 {
+  color: #fff4d6;
+}
+
+.cta .pill,
+.cta .secondary {
+  margin: 7px;
+}
+
+footer {
+  padding: 24px 6%;
+  font-size: 11px;
+  color: #766650;
+  background: #fffaf0;
+  display: flex;
+  justify-content: space-between;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+footer a {
+  text-decoration: underline;
+}
+
+/* Diseño responsive */
+
+@media (max-width: 620px) {
+  .links {
+    display: none;
+  }
+
+  .nav {
+    padding: 14px 5%;
+  }
+
+  .brand {
+    font-size: 17px;
+  }
+
+  .hero {
+    grid-template-columns: 1fr;
+    padding: 35px 6%;
+    gap: 16px;
+  }
+
+  .visual {
+    min-height: 265px;
+  }
+
+  .trust {
+    padding: 14px 3%;
+    gap: 3px;
+  }
+
+  .trust div {
+    font-size: 10px;
+  }
+
+  .grid {
+    grid-template-columns: 1fr;
+  }
+
+  section.content {
+    padding: 36px 6%;
+  }
+
+  .split {
+    grid-template-columns: 1fr;
+  }
+
+  .split .art {
+    min-height: 160px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<div class="top">
+  EL SABOR NATURAL DE LA MIEL · HONEY FARM BILA
+</div>
+
+<header class="nav">
+  <a class="brand" href="#inicio">
+    HONEY FARM BILA
+    <span>MIEL · NATURALEZA · SABOR</span>
+  </a>
+
+  <nav class="links" aria-label="Navegación principal">
+    <a href="#beneficios">Beneficios</a>
+    <a href="#producto">Producto</a>
+    <a href="#faq">Preguntas frecuentes</a>
+  </nav>
+
+  <a class="pill" href="#contacto">CONTACTAR ↗</a>
+</header>
+
+<main id="inicio">
+
+  <!-- HERO -->
+  <section class="hero">
+    <div>
+      <div class="eyebrow">Un toque de naturaleza en tu día</div>
+
+      <h1>
+        La dulzura de lo natural,
+        <em>gota a gota.</em>
+      </h1>
+
+      <p>
+        Descubre Honey Farm Bila: miel cruda para acompañar
+        tus desayunos, dar sabor a tus recetas y disfrutar
+        de la esencia de la miel.
+      </p>
+
+      <div class="actions">
+        <a class="pill" href="#contacto">
+          CONSULTAR Y COMPRAR ↗
+        </a>
+
+        <a class="secondary" href="#producto">
+          DESCUBRIR LA MIEL ↓
+        </a>
+      </div>
+
+      <div class="micro">
+        Sabor auténtico · Versátil · Para disfrutar a tu manera
+      </div>
+    </div>
+
+    <div class="visual"
+         role="img"
+         aria-label="Ilustración conceptual de un tarro de miel dorada">
+
+      <div class="sun"></div>
+      <span class="leaf a">🌿</span>
+      <span class="leaf b">✿</span>
+
+      <div class="jar">
+        <div class="lid"></div>
+
+        <div class="label">
+          <b>HONEY<br>FARM BILA</b>
+          <small>MIEL NATURAL</small>
+        </div>
+      </div>
+
+      <div class="note">
+        ILUSTRACIÓN CONCEPTUAL DEL PRODUCTO
+      </div>
+    </div>
+  </section>
+
+  <!-- ATRIBUTOS DESTACADOS -->
+  <div class="trust">
+    <div>
+      <strong>🍯</strong>
+      Sabor característico
+    </div>
+
+    <div>
+      <strong>🌼</strong>
+      Inspirada en la naturaleza
+    </div>
+
+    <div>
+      <strong>🥄</strong>
+      Fácil de disfrutar
+    </div>
+  </div>
+
+  <!-- BENEFICIOS -->
+  <section class="content" id="beneficios">
+    <div class="center">
+      <div class="eyebrow">Pequeños momentos, gran sabor</div>
+
+      <h2>Haz de cada cucharada algo especial</h2>
+
+      <p>
+        Para quienes valoran los ingredientes naturales y
+        buscan sabor y calidad en los pequeños detalles
+        de cada día.
+      </p>
+    </div>
+
+    <div class="grid">
+      <article class="feature">
+        <div class="ico">☕</div>
+        <h3>Tu ritual de cada mañana</h3>
+        <p>
+          Añade un toque dulce a tostadas, yogures
+          o bebidas calientes.
+        </p>
+      </article>
+
+      <article class="feature">
+        <div class="ico">🌿</div>
+        <h3>La miel a tu manera</h3>
+        <p>
+          Disfrútala sola o incorpórala a tus recetas
+          dulces y saladas.
+        </p>
+      </article>
+
+      <article class="feature">
+        <div class="ico">✨</div>
+        <h3>Conoce lo que eliges</h3>
+        <p>
+          Consulta el origen, el formato y las características
+          disponibles antes de comprar.
+        </p>
+      </article>
+    </div>
+  </section>
+
+  <!-- PRESENTACIÓN DEL PRODUCTO -->
+  <section class="content split" id="producto">
+    <div>
+      <div class="eyebrow">Conoce el producto</div>
+
+      <h2>Miel cruda, sabor auténtico</h2>
+
+      <p>
+        Una miel pensada para acompañar tu cocina diaria
+        con el sabor propio de este alimento natural.
+      </p>
+
+      <ul class="check">
+        <li>Ideal para desayunos e infusiones.</li>
+        <li>Versátil en preparaciones culinarias.</li>
+        <li>El color y la textura pueden variar naturalmente.</li>
+        <li>La cristalización es un proceso natural de la miel.</li>
+      </ul>
+
+      <a class="pill" href="#contacto">
+        PREGUNTAR POR FORMATOS
+      </a>
+    </div>
+
+    <div class="art" aria-label="Ilustración de miel y pan">
+      🍯 🥖
+    </div>
+  </section>
+
+  <!-- FICHA TÉCNICA -->
+  <section class="content">
+    <div class="center">
+      <div class="eyebrow">Información transparente</div>
+
+      <h2>Ficha del producto</h2>
+
+      <p>
+        Consulta los detalles disponibles antes de tomar
+        tu decisión de compra.
+      </p>
+    </div>
+
+    <table class="spec">
+      <tbody>
+        <tr>
+          <td>Marca</td>
+          <td>Honey Farm Bila</td>
+        </tr>
+
+        <tr>
+          <td>Producto</td>
+          <td>Miel cruda natural</td>
+        </tr>
+
+        <tr>
+          <td>Características</td>
+          <td>Sabor dulce; color y textura variables</td>
+        </tr>
+
+        <tr>
+          <td>Usos</td>
+          <td>Desayunos, infusiones y recetas</td>
+        </tr>
+
+        <tr>
+          <td>Precio</td>
+          <td>Consultar según formato y presentación</td>
+        </tr>
+
+        <tr>
+          <td>Formato y peso</td>
+          <td>Por confirmar con la marca</td>
+        </tr>
+
+        <tr>
+          <td>Origen y certificaciones</td>
+          <td>Por confirmar con la marca</td>
+        </tr>
+
+        <tr>
+          <td>Conservación</td>
+          <td>
+            Mantener bien cerrada en un lugar fresco y seco;
+            seguir las indicaciones de la etiqueta.
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+    <p class="pending">
+      La información comercial específica pendiente debe
+      confirmarse con la marca antes de publicar o vender.
+    </p>
+  </section>
+
+  <!-- PREGUNTAS FRECUENTES -->
+  <section class="content" id="faq" style="background:#f8f0dc">
+    <div class="center">
+      <div class="eyebrow">Resolvemos tus dudas</div>
+
+      <h2>Preguntas frecuentes</h2>
+
+      <p>
+        Información sencilla para que elijas con confianza.
+      </p>
+    </div>
+
+    <div class="faq">
+
+      <details>
+        <summary>¿Por qué se cristaliza la miel?</summary>
+        <p>
+          La cristalización es un proceso natural que depende
+          de la composición de la miel y de la temperatura.
+          No significa necesariamente que esté en mal estado.
+        </p>
+      </details>
+
+      <details>
+        <summary>¿Cómo puedo consumirla?</summary>
+        <p>
+          Puedes añadirla a tostadas, yogures, infusiones
+          y recetas. Ajusta la cantidad a tu gusto.
+        </p>
+      </details>
+
+      <details>
+        <summary>¿Qué precio tiene?</summary>
+        <p>
+          El precio depende del formato y de la presentación
+          disponible. Contacta con Honey Farm Bila para
+          consultar precio y disponibilidad actualizados.
+        </p>
+      </details>
+
+      <details>
+        <summary>
+          ¿Cuál es su origen y qué certificaciones tiene?
+        </summary>
+        <p>
+          Estos datos deben confirmarse con la marca.
+          Solicita la información específica del lote y
+          del producto antes de comprar.
+        </p>
+      </details>
+
+      <details>
+        <summary>¿Pueden consumir miel los bebés?</summary>
+        <p>
+          No. La miel no debe darse a menores de 12 meses.
+        </p>
+      </details>
+
+      <details>
+        <summary>¿Cómo puedo realizar un pedido?</summary>
+        <p>
+          Utiliza el botón de contacto para consultar
+          formatos, disponibilidad, precio y condiciones
+          de compra.
+        </p>
+      </details>
+
+    </div>
+  </section>
+
+  <!-- CONVERSIÓN -->
+  <section class="cta" id="contacto">
+    <div class="eyebrow" style="color:#efc65b">
+      Tu próximo momento dulce
+    </div>
+
+    <h2>¿Te gustaría probar Honey Farm Bila?</h2>
+
+    <p>
+      Consulta los formatos disponibles y recibe información
+      para realizar tu pedido.
+    </p>
+
+    <a
+      class="pill"
+      href="https://wa.me/34600542070?text=Hola%2C%20quiero%20informaci%C3%B3n%20sobre%20la%20miel%20Honey%20Farm%20Bila"
+      target="_blank"
+      rel="noopener"
+    >
+      CONSULTAR POR WHATSAPP ↗
+    </a>
+
+    <a
+      class="secondary"
+      style="border-color:#e5d2ac;color:#fff4d6"
+      href="tel:+34600542070"
+    >
+      LLAMAR AL 600 542 070
+    </a>
+
+    <p style="font-size:11px;margin-top:20px">
+      Precio, disponibilidad, formatos y envío:
+      consultar antes de confirmar el pedido.
+    </p>
+  </section>
+
+</main>
+
+<!-- PIE DE PÁGINA -->
+<footer>
+  <div>
+    <b>HONEY FARM BILA</b><br>
+    El sabor natural de la miel.
+  </div>
+
+  <div>
+    <a
+      href="https://www.google.com/maps/place/Calle+de+Garc%C3%ADa+de+Paredes,+78,+Chamber%C3%AD,+28010+Madrid/"
+      target="_blank"
+      rel="noopener"
+    >
+      Ubicación de contacto ↗
+    </a>
+    <br>
+
+    <a href="mailto:nebrijalabmel@gmail.com">
+      Contacto y privacidad ↗
+    </a>
+  </div>
+
+  <div>
+    © Honey Farm Bila<br>
+    Información del producto pendiente de validación.
+  </div>
+</footer>
+
+</body>
+</html>
